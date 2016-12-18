@@ -1,0 +1,1 @@
+Wallpaper template by Andre L.R.Ferreira (si0ux) https://collab.debian.net/profile/si0ux/tags/svg
