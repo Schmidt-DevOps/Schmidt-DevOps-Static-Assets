@@ -31,6 +31,14 @@ PROMPT='[%*][%(!.%F{red}.%F{green})%n%f@%F{yellow}%m%f%(!.%F{red}.)%f:%~] #'
 TMOUT=16200 # half of a typical 8-hour working day + 1 hour lunch break
 
 case $TERM in
+        xterm-256color*)
+        # Pos1 && End
+        bindkey "\e[H"  beginning-of-line                  ## Pos1
+        bindkey "\e[F"  end-of-line                        ## End
+        bindkey '^[[3~' delete-char                        ## Entf
+        bindkey '^[[5~' history-beginning-search-backward  ## Page Up
+        bindkey '^[[6~' history-beginning-search-forward   ## Page Down
+        ;;
         xterm*)
         # Pos1 && End
         bindkey '^[OH'  beginning-of-line                  ## Pos1
