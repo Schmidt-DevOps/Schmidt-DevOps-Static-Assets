@@ -73,3 +73,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# make xz use as many threads as there are CPU cores on the system
+export XZ_OPT="--threads=0"
