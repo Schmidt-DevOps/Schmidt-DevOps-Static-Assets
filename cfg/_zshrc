@@ -75,6 +75,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# make top always sort by CPU load (it does not by default in Arch)
+alias top='top -o %CPU'
+
 # open file manager in the current directory
 alias dop='xdg-open `pwd`'
 
