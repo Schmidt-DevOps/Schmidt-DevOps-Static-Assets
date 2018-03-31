@@ -83,3 +83,10 @@ alias dop='xdg-open `pwd`'
 
 # make xz use as many threads as there are CPU cores on the system
 export XZ_OPT="--threads=0"
+
+# set terminal title
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
