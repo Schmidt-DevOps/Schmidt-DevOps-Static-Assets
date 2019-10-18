@@ -83,3 +83,18 @@ alias dop='xdg-open `pwd`'
 
 # make xz use as many threads as there are CPU cores on the system
 export XZ_OPT="--threads=0"
+
+# fix vte.sh not being sourced for Tilix, https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    if [ -f /etc/profile.d/vte.sh ]; then
+        source /etc/profile.d/vte.sh
+    fi
+fi
+
+if [ -f /usr/share/oh-my-zsh/zshrc ]; then
+    . /usr/share/oh-my-zsh/zshrc
+fi
+
+if [ -f /usr/local/share/polyglot/polyglot.sh ]; then
+    . /usr/local/share/polyglot/polyglot.sh
+fi
