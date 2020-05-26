@@ -26,6 +26,7 @@ bindkey '^x^e' edit-command-line
 # bindkey -M vicmd v edit-command-line
 # /enable multiline command editing
 
+ZSH_THEME="" # make sure it does not get overwritten later
 setopt PROMPT_SUBST
 PROMPT='[%*][%(!.%F{red}.%F{green})%n%f@%F{yellow}%m%f%(!.%F{red}.)%f:%~] #'
 
@@ -93,8 +94,4 @@ fi
 
 if [ -f ~/.oh-my-zshrc ]; then
     . ~/.oh-my-zshrc
-fi
-
-if [ -f /usr/local/share/polyglot/polyglot.sh ]; then
-    . /usr/local/share/polyglot/polyglot.sh
 fi
