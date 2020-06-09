@@ -95,3 +95,7 @@ fi
 if [ -f ~/.oh-my-zshrc ]; then
     . ~/.oh-my-zshrc
 fi
+
+if [ -f "/usr/local/bin/acme.sh/acme.sh.env" ]; then
+    . "/usr/local/bin/acme.sh/acme.sh.env"
+fi
