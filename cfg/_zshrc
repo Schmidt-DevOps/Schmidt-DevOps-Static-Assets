@@ -99,3 +99,13 @@ fi
 if [ -f "/usr/local/bin/acme.sh/acme.sh.env" ]; then
     . "/usr/local/bin/acme.sh/acme.sh.env"
 fi
+
+# https://stackoverflow.com/a/64419092
+if [[ -f $(which tmux) ]] && [[ -z "$TMUX" ]] ;then
+     ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+     if [[ -z "$ID" ]] ;then # if not available attach to a new one
+         tmux new-session
+     else
+         tmux attach-session -t "$ID" # if available attach to it
+     fi
+fi
